@@ -30,7 +30,8 @@ function getNextIdent(key) {
 }
 
 function getLocalIdent(context, localIdentName, localName, options) {
-  const key = [context.resourcePath, localName].join('-');
+  const relativePath = context.resourcePath.replace(context.rootContext, '');
+  const key = [relativePath, localName].join('-');
   const ident = idents.get(key) || getNextIdent(key);
 
   usedIdents.set(key, ident);
