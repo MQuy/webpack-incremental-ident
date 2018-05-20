@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/MQuy/webpack-incremental-ident/issues"
   },
-  "homepage": "https://github.com/MQuy/webpack-incremental-ident#readme"
+  "homepage": "https://github.com/MQuy/webpack-incremental-ident#readme",
+  "dependencies": {
+    "webpack": "> 3"
+  },
+  "engines": {
+    "node": ">=6.11.5"
+  }
 }

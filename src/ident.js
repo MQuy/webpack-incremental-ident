@@ -1,4 +1,4 @@
-const { allowedCharacters, blacklist, idents, revertedIdents, usedIdents } = require('config');
+const { allowedCharacters, blacklist, idents, revertedIdents, usedIdents } = require('./config');
 
 let indexes = [0];
 
