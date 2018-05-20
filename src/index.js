@@ -1,5 +1,5 @@
 const getLocalIdent = require('./ident');
-const { setConfig, importLog, exportLog } = require('./config');
+const { setupConfig, importLog, exportLog } = require('./config');
 
 const revertedIdents = new Map();
 const usedIdents = new Map();

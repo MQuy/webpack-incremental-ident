@@ -39,7 +39,7 @@ function exportLog() {
 }
 
 module.exports = {
-  setConfig,
+  setupConfig,
   importLog,
   exportLog,
   allowedCharacters,
