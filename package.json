@@ -1,0 +1,25 @@
+{
+  "name": "webpack-incremental-ident",
+  "version": "0.0.1",
+  "description": "Generate incremental class name for css loader",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MQuy/webpack-incremental-ident.git"
+  },
+  "keywords": [
+    "webpack",
+    "css-loader",
+    "minify",
+    "css",
+    "ident",
+    "incremental",
+    "classname"
+  ],
+  "author": "MQuy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MQuy/webpack-incremental-ident/issues"
+  },
+  "homepage": "https://github.com/MQuy/webpack-incremental-ident#readme"
+}
