@@ -11,10 +11,16 @@ class IncrementalCSS {
   }
 
   apply(compiler) {
-    compiler.plugin('after-emit', (compilation, callback) => {
-      exportLog();
-      callback();
-    });
+    if (compiler.hooks) {
+      compiler.hooks.afterEmit.tapAsync('WebpackIncrementalIdent', this.handleAfterEmit);
+    } else {
+      compiler.plugin('after-emit', this.handleAfterEmit);
+    }
+  }
+
+  handleAfterEmit(compilation, callback) {
+    exportLog();
+    callback();
   }
 }
 
