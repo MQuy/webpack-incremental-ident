@@ -2,6 +2,11 @@
 
 Webpack plugin transform your css class name into shortest form.
 
+[![npm][npm]][npm-url]
+[![node][node]][node-url]
+[![deps][deps]][deps-url]
+[![licenses][licenses]][licenses-url]
+
 ![css](https://i.imgur.com/TkpNsCZ.png)
 
 ✍️ Using incremental class names causes problem because of two reasons:
@@ -77,3 +82,15 @@ Characters are included in class names.
 + Default: `[]`
 
 List of class names will be ignored for example `ad`
+
+[npm]: https://img.shields.io/npm/v/webpack-incremental-ident.svg
+[npm-url]: https://npmjs.com/package/webpack-incremental-ident
+
+[node]: https://img.shields.io/node/v/webpack-incremental-ident.svg
+[node-url]: https://nodejs.org
+
+[deps]: https://img.shields.io/david/MQuy/webpack-incremental-ident.svg
+[deps-url]: https://david-dm.org/MQuy/webpack-incremental-ident
+
+[licenses]:	https://img.shields.io/github/license/MQuy/webpack-incremental-ident.svg
+[licenses-url]: https://github.com/MQuy/webpack-incremental-ident/blob/master/LICENSE
