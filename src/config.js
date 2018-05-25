@@ -1,8 +1,9 @@
-const fs = require('fs');
+const fs = require("fs");
 
-let allowedCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_';
+let allowedCharacters =
+  "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
 let blacklist = [];
-let logPath = '';
+let logPath = "";
 const idents = new Map();
 const revertedIdents = new Map();
 const usedIdents = new Map();
@@ -17,10 +18,10 @@ function importLog() {
   if (fs.existsSync(logPath)) {
     const data = require(logPath);
 
-    Object.keys(data.idents).forEach((key) => {
+    Object.keys(data.idents).forEach(key => {
       idents.set(key, data.idents[key]);
       revertedIdents.set(data.idents[key], key);
-    })
+    });
   }
 }
 
@@ -29,13 +30,10 @@ function exportLog() {
 
   idents.forEach((value, key) => {
     if (usedIdents.has(key)) {
-      jsonIdents[key] = value
+      jsonIdents[key] = value;
     }
   });
-  fs.writeFileSync(
-    logPath,
-    JSON.stringify({ idents: jsonIdents }, null, 2)
-  )
+  fs.writeFileSync(logPath, JSON.stringify({ idents: jsonIdents }, null, 2));
 }
 
 module.exports = {

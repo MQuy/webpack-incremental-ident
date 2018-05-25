@@ -1,5 +1,5 @@
-const getLocalIdent = require('./ident');
-const { setupConfig, importLog, exportLog } = require('./config');
+const getLocalIdent = require("./ident");
+const { setupConfig, importLog, exportLog } = require("./config");
 
 const revertedIdents = new Map();
 const usedIdents = new Map();
@@ -12,9 +12,12 @@ class IncrementalCSS {
 
   apply(compiler) {
     if (compiler.hooks) {
-      compiler.hooks.afterEmit.tapAsync('WebpackIncrementalIdent', this.handleAfterEmit);
+      compiler.hooks.afterEmit.tapAsync(
+        "WebpackIncrementalIdent",
+        this.handleAfterEmit
+      );
     } else {
-      compiler.plugin('after-emit', this.handleAfterEmit);
+      compiler.plugin("after-emit", this.handleAfterEmit);
     }
   }
 
