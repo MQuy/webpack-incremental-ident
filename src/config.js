@@ -45,5 +45,5 @@ module.exports = {
   logPath,
   idents,
   revertedIdents,
-  usedIdents
+  usedIdents,
 };

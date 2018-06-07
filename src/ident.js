@@ -3,7 +3,7 @@ const {
   blacklist,
   idents,
   revertedIdents,
-  usedIdents
+  usedIdents,
 } = require("./config");
 
 // CSS identifier has to follow the rule https://www.w3.org/TR/CSS2/syndata.html#value-def-identifier
@@ -42,7 +42,9 @@ function getNextIdent(key) {
 }
 
 function getLocalIdent(context, localIdentName, localName, options) {
-  const relativePath = context.resourcePath.replace(context.rootContext, "");
+  const relativePath = context.resourcePath
+    .replace(context.rootContext, "")
+    .replace(/\\+/g, "/");
   const key = [relativePath, localName].join("-");
   const ident = idents.get(key) || getNextIdent(key);
 

@@ -10,8 +10,9 @@ Webpack plugin transform your css class name into shortest form.
 ![css](https://i.imgur.com/TkpNsCZ.png)
 
 ✍️ Using incremental class names causes problem because of two reasons:
-+ Webpack potentially compiles input files in different order.
-+ You change the order when using `require/import`.
+
+- Webpack potentially compiles input files in different order.
+- You change the order when using `require/import`.
 
 This plugin solves the problem above by keeping track of incremental class names and reuse them for following compilings.
 
@@ -59,38 +60,35 @@ const webpackConfig = {
 ### Configuration
 
 ```js
-new IncrementalCSS(options)
+new IncrementalCSS(options);
 ```
 
 #### options.logPath
 
-+ Type: `String`
-+ Required
+- Type: `String`
+- Required
 
 Path to your json file to keep track of your incremental class names.
 
 #### options.characters
 
-+ Type: `Array`
-+ Default: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_`
+- Type: `Array`
+- Default: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_`
 
 Characters are included in class names.
 
 #### options.blacklist
 
-+ Type: `Array of regex`
-+ Default: `[]`
+- Type: `Array of regex`
+- Default: `[]`
 
 List of class names will be ignored for example `ad`
 
 [npm]: https://img.shields.io/npm/v/webpack-incremental-ident.svg
 [npm-url]: https://npmjs.com/package/webpack-incremental-ident
-
 [node]: https://img.shields.io/node/v/webpack-incremental-ident.svg
 [node-url]: https://nodejs.org
-
 [deps]: https://img.shields.io/david/MQuy/webpack-incremental-ident.svg
 [deps-url]: https://david-dm.org/MQuy/webpack-incremental-ident
-
-[licenses]:	https://img.shields.io/github/license/MQuy/webpack-incremental-ident.svg
+[licenses]: https://img.shields.io/github/license/MQuy/webpack-incremental-ident.svg
 [licenses-url]: https://github.com/MQuy/webpack-incremental-ident/blob/master/LICENSE

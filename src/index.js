@@ -14,7 +14,7 @@ class IncrementalCSS {
     if (compiler.hooks) {
       compiler.hooks.afterEmit.tapAsync(
         "WebpackIncrementalIdent",
-        this.handleAfterEmit
+        this.handleAfterEmit,
       );
     } else {
       compiler.plugin("after-emit", this.handleAfterEmit);
