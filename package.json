@@ -1,6 +1,6 @@
 {
   "name": "webpack-incremental-ident",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate incremental class name for css loader",
   "main": "src/index.js",
   "repository": {
