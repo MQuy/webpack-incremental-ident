@@ -22,10 +22,11 @@
     "url": "https://github.com/MQuy/webpack-incremental-ident/issues"
   },
   "homepage": "https://github.com/MQuy/webpack-incremental-ident#readme",
-  "dependencies": {
-    "webpack": "> 3"
-  },
   "engines": {
     "node": ">=6.11.5"
+  },
+  "devDependencies": {
+    "loader-utils": "^1.0.0",
+    "webpack": "^3.0.0"
   }
 }

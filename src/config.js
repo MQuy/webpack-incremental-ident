@@ -4,6 +4,7 @@ let allowedCharacters =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
 let blacklist = [];
 let logPath = "";
+let fallbackIdent = "";
 const idents = new Map();
 const revertedIdents = new Map();
 const usedIdents = new Map();
@@ -12,6 +13,15 @@ function setupConfig(options) {
   allowedCharacters = options.characters || allowedCharacters;
   logPath = options.logPath;
   blacklist = options.blacklist || blacklist;
+  fallbackIdent = options.fallbackIdent;
+}
+
+function getConfig() {
+  return {
+    allowedCharacters,
+    blacklist,
+    fallbackIdent,
+  };
 }
 
 function importLog() {
@@ -40,10 +50,8 @@ module.exports = {
   setupConfig,
   importLog,
   exportLog,
-  allowedCharacters,
-  blacklist,
-  logPath,
   idents,
   revertedIdents,
   usedIdents,
+  getConfig,
 };

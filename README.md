@@ -77,6 +77,13 @@ Path to your json file to keep track of your incremental class names.
 
 Characters are included in class names.
 
+#### options.fallbackIdent
+
+- Type: `String`
+- Default: `""`
+
+Fallback to an ident name strategy if classname doesn't exist in `logPath`
+
 #### options.blacklist
 
 - Type: `Array of regex`

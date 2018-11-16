@@ -1,9 +1,6 @@
 const getLocalIdent = require("./ident");
 const { setupConfig, importLog, exportLog } = require("./config");
 
-const revertedIdents = new Map();
-const usedIdents = new Map();
-
 class IncrementalCSS {
   constructor(options = {}) {
     setupConfig(options);
@@ -21,7 +18,7 @@ class IncrementalCSS {
     }
   }
 
-  handleAfterEmit(compilation, callback) {
+  handleAfterEmit(_compilation, callback) {
     exportLog();
     callback();
   }
