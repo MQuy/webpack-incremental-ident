@@ -1,6 +1,12 @@
 var loaderUtils = require("loader-utils");
 var path = require("path");
-const { getConfig, idents, revertedIdents, usedIdents } = require("./config");
+const {
+  getConfig,
+  idents,
+  revertedIdents,
+  usedIdents,
+  originalIdents,
+} = require("./config");
 
 // CSS identifier has to follow the rule https://www.w3.org/TR/CSS2/syndata.html#value-def-identifier
 const validCSSIdentifier = /^[^\d(--)(-\d)]/;
@@ -44,10 +50,9 @@ function getLocalIdent(context, localIdentName, localName, options = {}) {
     .replace(context.rootContext, "")
     .replace(/\\+/g, "/");
   const key = [relativePath, localName].join("-");
-  const isNameExist = idents.has(key);
-  const ident = isNameExist ? idents.get(key) : getNextIdent(key);
+  const ident = idents.has(key) ? idents.get(key) : getNextIdent(key);
 
-  if (fallbackIdent && !isNameExist) {
+  if (fallbackIdent && !originalIdents.has(key)) {
     usedIdents.set(key, ident);
     return getFallbackIdent(context, fallbackIdent, localName, options);
   } else {

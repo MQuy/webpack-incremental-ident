@@ -5,6 +5,7 @@ let allowedCharacters =
 let blacklist = [];
 let logPath = "";
 let fallbackIdent = "";
+const originalIdents = new Map();
 const idents = new Map();
 const revertedIdents = new Map();
 const usedIdents = new Map();
@@ -29,6 +30,7 @@ function importLog() {
     const data = require(logPath);
 
     Object.keys(data.idents).forEach(key => {
+      originalIdents.set(key, data.idents[key]);
       idents.set(key, data.idents[key]);
       revertedIdents.set(data.idents[key], key);
     });
@@ -51,6 +53,7 @@ module.exports = {
   importLog,
   exportLog,
   idents,
+  originalIdents,
   revertedIdents,
   usedIdents,
   getConfig,
